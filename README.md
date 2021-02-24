@@ -6,7 +6,7 @@ This is a tutorial project, which demonstrates Microservice using Spring Boot an
 
 VTS was decomposed into three core microservices. All of them are independently deployable applications, organized around certain business domains.
 
-![Vaccination Tracking System](https://cloud.githubusercontent.com/assets/6069066/13900465/730f2922-ee20-11e5-8df0-e7b51c668847.png)
+![Vaccination Tracking System](https://github.com/Hazem-Mostafa/VTS/blob/main/docs/03-Architecture/architecture.png)
 
 #### Clients service
 Contains general info about the client such as name, mobile number and email address.
