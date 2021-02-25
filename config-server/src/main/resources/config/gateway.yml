@@ -1,0 +1,28 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: clients_route
+        uri: lb://clients-service
+        predicates:
+        - Path=/clients/**
+      - id: vaccines_route
+        uri: lb://vaccines-service
+        predicates:
+        - Path=/vaccines/**
+      - id: branches_route
+        uri: lb://branches-service
+        predicates:
+        - Path=/branches/**
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+server:
+  port: 8080
+
+
+#http://localhost:8080/actuator/gateway/routes

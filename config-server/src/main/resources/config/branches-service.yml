@@ -1,0 +1,10 @@
+server:
+  port: 8300
+
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: trace
