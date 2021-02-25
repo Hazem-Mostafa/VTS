@@ -5,27 +5,17 @@ spring:
     gateway:
       routes:
       - id: clients_route
-        uri: http://localhost:8100/clients
+        uri: lb://clients-service
         predicates:
         - Path=/clients/**
       - id: vaccines_route
-        uri: http://localhost:8200/vaccines
+        uri: lb://vaccines-service
         predicates:
         - Path=/vaccines/**
       - id: branches_route
-        uri: http://localhost:8300/branches
+        uri: lb://branches-service
         predicates:
         - Path=/branches/**
-      - id: reports_route
-        uri: http://localhost:8300/reports
-        predicates:
-        - Path=/reports/**
-      - id: openapi_route
-        uri: http://localhost:${server.port}
-        predicates:
-        - Path=/v3/api-docs/**
-        filters:
-        - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
 
 management:
   endpoints:
